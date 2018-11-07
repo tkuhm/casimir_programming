@@ -5,6 +5,8 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg") # this you need for new version of matplotlib to work
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FormatStrFormatter
+
 
 p = 5
 print("The radius of the circle is", p)
@@ -29,5 +31,7 @@ ax.set_xlim((-2, 2))
 ax.set_ylim((-2, 2))
 ax.set_aspect('equal')
 ax.add_artist(bluecircle)
+
+plt.gca().xaxis.set_major_formatter(FormatStrFormatter('cm'))
 
 fig.savefig('bluecircle.png')
