@@ -1,0 +1,18 @@
+Biotek output to growth curves
+
+first import excel
+
+acces data into arrays (per well/timepoint)
+
+plot the data timepoint vs. OD or log(OD)
+
+Fit the data (the exponential growth part)
+    - Calculate doubling time
+generate output! graph + doubling times    
+
+=====
+
+
+Be able to plot multiple curves in one plot
+Input plate layout
+interactive plot, adding curves or switching between curves
