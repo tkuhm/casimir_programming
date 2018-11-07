@@ -25,9 +25,9 @@ bluecircle = plt.Circle((0,0), 1, color='blue')
 
 fig, ax = plt.subplots()
 
-ax.set_xlim((-2, 2))
+ax.set_xlim((-2, 2)) # this makes the circle centered
 ax.set_ylim((-2, 2))
-ax.set_aspect('equal')
-ax.add_artist(bluecircle)
+ax.set_aspect('equal') #this makes the circle round
+ax.add_artist(bluecircle) #this stackoverflow told me to do..
 
 fig.savefig('bluecircle.png')
