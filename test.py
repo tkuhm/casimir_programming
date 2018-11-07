@@ -27,7 +27,7 @@ fig, ax = plt.subplots()
 
 ax.set_xlim((-2, 2))
 ax.set_ylim((-2, 2))
-
+ax.set_aspect('equal')
 ax.add_artist(bluecircle)
 
 fig.savefig('bluecircle.png')
