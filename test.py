@@ -19,4 +19,13 @@ def surface_area(r):
 
 print("The surface area of the circle is", surface_area(p))
 
-plt.Circle((0,0), 1, color='blue')
+bluecircle = plt.Circle((0,0), 1, color='blue')
+
+fig, ax = plt.subplots()
+
+ax.set_xlim((-2, 2))
+ax.set_ylim((-2, 2))
+
+ax.add_artist(bluecircle)
+
+fig.savefig('bluecircle.png')
