@@ -3,7 +3,7 @@ print("hello world!")
 
 import numpy as np
 import matplotlib
-matplotlib.use("Agg")
+matplotlib.use("Agg") # this you need for new version of matplotlib to work
 import matplotlib.pyplot as plt
 
 p = 5
