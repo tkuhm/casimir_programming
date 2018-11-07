@@ -41,4 +41,12 @@ ax.add_artist(yellowcircle)
 ax.add_artist(greencircle)
 ax.add_artist(pinkcircle)
 
+
+plt.xlabel(r'nice axis', size=15)
+
+plt.ylabel(r'another size thing', size=15)
+
+plt.title('Many beautiful circles', size=20)
+
+
 fig.savefig('circles.png')
