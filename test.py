@@ -24,14 +24,21 @@ def surface_area(r):
 print("The surface area of the circle is", surface_area(p))
 
 bluecircle = plt.Circle((0,0), 1, color='blue')
+redcircle = plt.Circle((1,1), 1, color='red')
+yellowcircle = plt.Circle((-1,-1), 1, color='yellow')
+greencircle = plt.Circle((-1,1), 1, color='green')
+pinkcircle = plt.Circle((1,-1), 1, color='pink')
 
 fig, ax = plt.subplots()
 
-ax.set_xlim((-2, 2))
+ax.set_xlim((-2, 2)) # this makes the circle centered
 ax.set_ylim((-2, 2))
-ax.set_aspect('equal')
-ax.add_artist(bluecircle)
 
-plt.gca().xaxis.set_major_formatter(FormatStrFormatter('cm'))
+ax.set_aspect('equal') #this makes the circle round
+ax.add_artist(bluecircle) #this stackoverflow told me to do..
+ax.add_artist(redcircle)
+ax.add_artist(yellowcircle)
+ax.add_artist(greencircle)
+ax.add_artist(pinkcircle)
 
-fig.savefig('bluecircle.png')
+fig.savefig('circles.png')
