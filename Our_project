@@ -1,14 +1,14 @@
 Biotek output to growth curves
 
-first import excel
+first import excel - check
 
-acces data into arrays (per well/timepoint)
+acces data into arrays (per well/timepoint) - not in array, but in panda things
 
-plot the data timepoint vs. OD or log(OD)
+plot the data timepoint vs. OD or log(OD) - vs. OD works, vs. log OD, project for now (Els)
 
 Fit the data (the exponential growth part)
     - Calculate doubling time
-generate output! graph + doubling times    
+generate output! graph + doubling times - Tanja! 
 
 =====
 
