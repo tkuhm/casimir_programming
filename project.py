@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 nrows = 481
 
 #to fix timesteps
-time_step_seconds = 360
-time_start_seconds = 310
+time_step_seconds = 360 # steps between measurements
+time_start_seconds = 310 # first measurement starts at 5 min and 10 s
 
 #import excel file (file name, number of first rows to skip, number of rows to use, which cols to use)
 df = pd.read_excel('Ilses_biotek_exp.xlsx', skiprows=30, nrows=nrows, usecols="B:CU")
@@ -19,8 +19,7 @@ df = pd.read_excel('Ilses_biotek_exp.xlsx', skiprows=30, nrows=nrows, usecols="B
 
 #new timesteps
 seconds_since_start = np.arange(nrows)*time_step_seconds+time_start_seconds
-time_since_start = pd.to_timedelta(seconds_since_start, unit='s')
-
+time_since_start = pd.to_timedelta(seconds_since_start, unit='s') # input unit
 df['Time'] = time_since_start
 
 
