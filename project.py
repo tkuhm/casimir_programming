@@ -27,8 +27,12 @@ df['Time'] = time_since_start
 #sets time as index
 df.set_index('Time', inplace=True)
 
-#plots a graph
+#plots a graph showing the growth curve
+fig, ax = plt.subplots()
 df.C11.plot()
 plt.xlabel(r'timestep', size=15)
 plt.ylabel(r'OD600', size=15)
 plt.title('growth curve of C11', size=20)
+
+#saves the figure
+fig.savefig('c11.png')
