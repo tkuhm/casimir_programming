@@ -1,0 +1,4 @@
+The doubling time of G3 is: 188.554272128 min.
+The growth rate per min for G3 is: 0.00367611496009.
+Start fit: 99
+End fit: 169

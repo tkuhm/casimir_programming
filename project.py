@@ -36,18 +36,19 @@ df.set_index('Time', inplace=True)
 
 #plots a graph showing the growth curve
 fig, ax = plt.subplots()
-df.C11.plot() #issue!
+df[mfw_input].plot()
 plt.xlabel(r'timestep', size=15)
 plt.ylabel(r'OD600', size=15)
 plt.title('growth curve of '+mfw_input, size=20)
 
 #saves the figure
 fig.savefig('plots/'+mfw_input+'.png')
+print('saved: plots/'+mfw_input+'.png')
 
 ##Fitting the data
 
 #using log data
-logmfw = np.log10(mfw)
+logmfw = np.log2(mfw)
 
 #linear model for fitting
 def modelmfw(x):
@@ -68,8 +69,7 @@ for k,(i,j) in enumerate(pairs):
 #find best R-squared (best fit)
 np.argmax(results[2,:])
 startmfw, endmfw = pairs[np.argmax(results[2,:])]
-print('start fit:', startmfw)
-print('end fit:', endmfw)
+
 
 #Generating best fit
 slopemfw, interceptmfw, rvaluemfw, pvaluemfw, stderrmfw = stats.linregress(seconds_since_start[startmfw:endmfw], logmfw[startmfw:endmfw])
@@ -86,3 +86,21 @@ plt.title('growth curve of '+mfw_input, size=20)
 
 #saves the figure
 fig.savefig('plots/'+mfw_input+'_fit.png')
+print('saved: plots/'+mfw_input+'_fit.png')
+
+#calculates the doubling time and growth rate
+doublingtime_insec = np.log(2)/slopemfw
+doublingtime_inmin = doublingtime_insec/60
+
+gr_min = slopemfw*60 #conversion to minutes, slopemfw is growth rate per sec
+
+
+#saves the output
+f = open('output/'+mfw_input+'_output.txt', 'w+')
+
+str_gr_min = str(gr_min)
+str_dt = str(doublingtime_inmin)
+str_startmfw = str(startmfw)
+str_endmfw = str(endmfw)
+f.write('The doubling time of '+mfw_input+' is: '+str_dt+' min.\nThe growth rate per min for '+mfw_input+' is: '+str_gr_min+'.\nStart fit: '+str_startmfw+'\nEnd fit: '+str_endmfw)
+print('saved: output/'+mfw_input+'_output.txt, containing doubling time, growth rate and start/end fit')
