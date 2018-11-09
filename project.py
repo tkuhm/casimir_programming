@@ -39,10 +39,10 @@ fig, ax = plt.subplots()
 df.C11.plot() #issue!
 plt.xlabel(r'timestep', size=15)
 plt.ylabel(r'OD600', size=15)
-plt.title('growth curve of mfw', size=20)
+plt.title('growth curve of '+mfw_input, size=20)
 
 #saves the figure
-fig.savefig('mfw.png')
+fig.savefig('plots/'+mfw_input+'.png')
 
 ##Fitting the data
 
@@ -77,12 +77,12 @@ slopemfw, interceptmfw, rvaluemfw, pvaluemfw, stderrmfw = stats.linregress(secon
 #plotting best fit
 fig, ax = plt.subplots()
 plt.plot(seconds_since_start, logmfw)
-plt.plot(seconds_since_start[100:250], modelmfw(seconds_since_start[100:250]))
+plt.plot(seconds_since_start[startmfw-50:endmfw+50], modelmfw(seconds_since_start[startmfw-50:endmfw+50]))
 
 #ax.set_yscale('log')
-plt.xlabel(r'timestep', size=15)
-plt.ylabel(r'OD600', size=15)
-plt.title('growth curve of mfw', size=20)
+plt.xlabel(r'# of seconds', size=15)
+plt.ylabel(r'log of OD600', size=15)
+plt.title('growth curve of '+mfw_input, size=20)
 
 #saves the figure
-fig.savefig('mfw_fit.png')
+fig.savefig('plots/'+mfw_input+'_fit.png')
