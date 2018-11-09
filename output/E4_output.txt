@@ -1,0 +1,4 @@
+The doubling time of E4 is: 522.779593533 min.
+The growth rate per min for E4 is: 0.0013258879825.
+Start fit: 153
+End fit: 223

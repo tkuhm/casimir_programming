@@ -1,0 +1,4 @@
+The doubling time of C11 is: 165.983306097 min.
+The growth rate per min for C11 is: 0.00417600538788.
+Start fit:122
+End fit:192

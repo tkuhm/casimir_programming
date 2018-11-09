@@ -1,0 +1,4 @@
+The doubling time of C8 is: 169.400616071 min.
+The growth rate per min for C8 is: 0.00409176304453.
+Start fit: 104
+End fit: 174

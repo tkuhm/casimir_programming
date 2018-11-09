@@ -1,0 +1,1 @@
+The doubling time of D5 is: 175.646479018 min. The growth rate per min for D5 is: 0.00394626288232
